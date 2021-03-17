@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Result Page</title>
+</head>
+
+<body>
+    <a href="/">Home Page</a>
+    <div>
+        <% if(result.length){ %>
+             <% result.forEach(element=>{%>
+            <h2>Country Name: <%= element.country %> </h2>
+            <p>Date: <%= element.date %></p>
+            <p>-------------------------------------------------</p>
+            <form action="/RecordDetails/<%= element.id %>" method="POST">
+                <input type="text" name="country" value="<%= element.country %>" hidden>
+                <input type="text" name="totalConfirmedCases" value="<%= element.totalConfirmedCases %>" hidden>
+                <input type="text" name="totalDeathsCases" value="<%= element.totalDeathsCases %>" hidden>
+                <input type="text" name="date" value="<%= element.date %>" hidden>
+                <input type="text" name="totalRecoveredCases" value="<%= element.totalRecoveredCases %>" hidden>
+                <button type="submit">View-Details</button>
+            </form>
+            <%}) %>
+        <%} else {%> 
+            <p> NO AVAILABLE RECORDS</p>
+        <%}%>
+
+    
+    </div>
+
+
+    <div>
+      
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/app.js"></script>
+
+</html>
