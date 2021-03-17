@@ -10,7 +10,11 @@
 </head>
 
 <body>
-    <a href="/">Home Page</a>
+    <ul class="navBar">
+        <li><a href="/">Home Page</a></li>
+        <li> <a href="/AllCountries">All Countries Data</a></li>
+        <li><a href="/MyRecords">My Records</a></li>
+    </ul>
     <div>
     
             <form action="/MyRecords/<%= result.id %>?_method=DELETE" method="POST">
@@ -20,7 +24,7 @@
                     <p>total Death Cases: <%= result.totalDeathsCases %> </p>
                     <p>total Recovered Cases: <%= result.totalRecoveredCases %> </p>
                     <p>-------------------------------------------------</p>
-                <button type="submit">Delete</button>
+                <button type="submit"  class="Btn" >Delete</button>
             </form>
          
     </div>

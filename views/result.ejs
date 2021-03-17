@@ -10,12 +10,17 @@
 </head>
 
 <body>
-    <a href="/">Home Page</a>
-    <a href="/AllCountries">All Countries Data</a>
-    <div>
-        <h2>Country Name: <%= result.country %>
-        </h2>
+    <ul class="navBar">
+        <li><a href="/">Home Page</a></li>
+        <li> <a href="/AllCountries">All Countries Data</a></li>
+        <li><a href="/MyRecords">My Records</a></li>
+    </ul>
+    
+    <div class="Card">
+        
         <% result.forEach(element=>{%>
+            <p>Country Name: <%= element.country %>
+            </p>
             <p>Date: <%= element.date %>
             </p>
             <p>Cases: <%= element.cases %>

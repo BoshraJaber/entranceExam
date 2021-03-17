@@ -9,24 +9,29 @@
     <title>Result Page</title>
 </head>
 
-<body>
-    <a href="/">Home Page</a>
-    <div>
+<body class="country1">
+    <ul class="navBar">
+        <li><a href="/">Home Page</a></li>
+        <li> <a href="/AllCountries">All Countries Data</a></li>
+        <li><a href="/MyRecords">My Records</a></li>
+    </ul>
+    <div class="country">
         <% result.forEach(element=>{%>
             <h2>Country Name: <%= element.country %> </h2>
             <p>Date: <%= element.date %></p>
             <p>total Confirmed Cases: <%= element.totalConfirmedCases %> </p>
             <p>total Death Cases: <%= element.totalDeathsCases %> </p>
             <p>total Recovered Cases: <%= element.totalRecoveredCases %> </p>
-            <p>-------------------------------------------------</p>
+           
             <form action="/MyRecords" method="POST">
                 <input type="text" name="country" value="<%= element.country %>" hidden>
                 <input type="text" name="totalConfirmedCases" value="<%= element.totalConfirmedCases %>" hidden>
                 <input type="text" name="totalDeathsCases" value="<%= element.totalDeathsCases %>" hidden>
                 <input type="text" name="date" value="<%= element.date %>" hidden>
                 <input type="text" name="totalRecoveredCases" value="<%= element.totalRecoveredCases %>" hidden>
-                <button type="submit">add-to-my-records</button>
+                <button type="submit" class="Btn">add-to-my-records</button>
             </form>
+            <p>-------------------------------------------------</p>
             <%}) %>
     </div>
 

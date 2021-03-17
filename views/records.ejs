@@ -10,7 +10,11 @@
 </head>
 
 <body>
-    <a href="/">Home Page</a>
+    <ul class="navBar">
+        <li><a href="/">Home Page</a></li>
+        <li> <a href="/AllCountries">All Countries Data</a></li>
+        <li><a href="/MyRecords">My Records</a></li>
+    </ul>
     <div>
         <% if(result.length){ %>
              <% result.forEach(element=>{%>
@@ -23,7 +27,7 @@
                 <input type="text" name="totalDeathsCases" value="<%= element.totalDeathsCases %>" hidden>
                 <input type="text" name="date" value="<%= element.date %>" hidden>
                 <input type="text" name="totalRecoveredCases" value="<%= element.totalRecoveredCases %>" hidden>
-                <button type="submit">View-Details</button>
+                <button type="submit"  class="Btn">View-Details</button>
             </form>
             <%}) %>
         <%} else {%> 

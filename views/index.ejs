@@ -8,20 +8,27 @@
     <title>Home Page</title>
 </head>
 <body>
-    <a href="/"></a>
-    <a href="/AllCountries">All Countries Data</a>
-    <div>
+    <ul class="navBar">
+        <li><a href="/">Home Page</a></li>
+        <li> <a href="/AllCountries">All Countries Data</a></li>
+        <li><a href="/MyRecords">My Records</a></li>
+    </ul>
+    
+   
+    
+
+    <div class="staticData">
         <p>Total Confirmed: <%= result.TotalConfirmed %> </p>
         <p>Total Deaths: <%= result.TotalDeaths %> </p>
         <p>Total Recovered: <%= result.TotalRecovered %> </p>
     </div>
 
     <div>
-        <form action="getCountryResult" method="POST">
-            <input type="text" name="country" placeholder="Enter the name of the country">
-            <input type="date" name="from" placeholder="from">
-            <input type="date" name="to" placeholder="to">
-            <button type="submit">get the Covid-19 statistics</button>
+        <form action="getCountryResult" method="POST" >
+            <input class="input" type="text" name="country" placeholder="Enter the name of the country">
+            <input class="input" type="date" name="from" placeholder="from">
+            <input  class="input" type="date" name="to" placeholder="to">
+            <button type="submit" class="Btn">Search</button>
         </form>
     </div>
 </body>
