@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <a href="/"></a>
+    <a href="/AllCountries">All Countries Data</a>
+    <div>
+        <p>Total Confirmed: <%= result.TotalConfirmed %> </p>
+        <p>Total Deaths: <%= result.TotalDeaths %> </p>
+        <p>Total Recovered: <%= result.TotalRecovered %> </p>
+    </div>
+
+    <div>
+        <form action="getCountryResult" method="POST">
+            <input type="text" name="country" placeholder="Enter the name of the country">
+            <input type="date" name="from" placeholder="from">
+            <input type="date" name="to" placeholder="to">
+            <button type="submit">get the Covid-19 statistics</button>
+        </form>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/app.js"></script>
+</html>
+
